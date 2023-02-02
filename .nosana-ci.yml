@@ -12,6 +12,7 @@ jobs:
     - name: install
       commands:
         - npm ci --legacy-peer-deps
+        - npm i @streamflow/stream @solana/web3.js @project-serum/anchor
         - npm run test 
       artifacts:
         - name: node_modules
