@@ -1,0 +1,18 @@
+nosana:
+    description: Streamflow js-sdk
+
+global:
+    image: registry.hub.docker.com/library/node:18
+
+    trigger:
+        branch:
+            - master
+
+jobs:
+    - name: install
+      commands:
+        - npm ci --legacy-peer-deps
+        - npm run test 
+      artifacts:
+        - name: node_modules
+          path: ./
